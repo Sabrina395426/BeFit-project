@@ -1,0 +1,57 @@
+﻿@model BeFit.Models.ViewModels.ExerciseStatsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>ExerciseStatsViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ExerciseName" class="control-label"></label>
+                <input asp-for="ExerciseName" class="form-control" />
+                <span asp-validation-for="ExerciseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalReps" class="control-label"></label>
+                <input asp-for="TotalReps" class="form-control" />
+                <span asp-validation-for="TotalReps" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalSets" class="control-label"></label>
+                <input asp-for="TotalSets" class="form-control" />
+                <span asp-validation-for="TotalSets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalLoad" class="control-label"></label>
+                <input asp-for="TotalLoad" class="form-control" />
+                <span asp-validation-for="TotalLoad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

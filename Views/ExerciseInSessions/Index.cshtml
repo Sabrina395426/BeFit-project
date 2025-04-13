@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BeFit.Models.ExerciseType>
+
+@{
+    ViewData["Title"] = "Rodzaje ćwiczeń";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">Dodaj nowy rodzaj ćwiczenia</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.Id })">Edytuj</a> |
+                    <a href="@Url.Action("Delete", new { id = item.Id })">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
